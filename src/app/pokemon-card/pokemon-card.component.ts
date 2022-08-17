@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class PokemonCardComponent  {
   @Input()
   pokemon!: string;
+
+  teste: string = 'huahduadu';
 }
