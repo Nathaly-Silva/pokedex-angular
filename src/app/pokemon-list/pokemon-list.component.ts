@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../services/pokemon.service';
 
 @Component({
@@ -6,9 +6,12 @@ import { PokemonService } from '../services/pokemon.service';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.sass']
 })
-export class PokemonListComponent {
-  pokemons = ['Bulbasaur', 'Ivysaur', 'Venosaur', 'Charmander'];
+export class PokemonListComponent implements OnInit {
 
-  constructor(private PokemonService: PokemonService) {}
+  ngOnInit(): void {
+    console.log(this.pokemonService.getPokemons());
+  }
+
+  constructor(public pokemonService: PokemonService) {}
 }
 
